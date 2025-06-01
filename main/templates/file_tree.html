@@ -1,0 +1,20 @@
+
+<ul>
+    {% for name, subtree in files_tree.items %}
+        <li>
+            
+                <a href="/uploads/{{ parent_path }}{{ name }}" download>{{ name }}</a>
+                <form action="{% url 'delete_file' %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="filename" value="{{ parent_path }}{{ name }}">
+         
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+               
+                </form>
+            
+        </li>
+    {% endfor %}
+</ul> 
+
+
+  
