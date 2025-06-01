@@ -20,7 +20,7 @@ def build_file_tree(base_path):
             return tree
 
 def index(request):
-    upload_folder = os.path.join(settings.BASE_DIR, 'tmp/uploads')
+    upload_folder = os.path.join(settings.BASE_DIR, 'uploads')
     os.makedirs(upload_folder, exist_ok=True)
 
     message_file = os.path.join(upload_folder, 'message.txt')
